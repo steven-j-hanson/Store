@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  name: MyString
+  pst: 9.99
+  gst: 9.99
+  hst: 9.99
+  created_at: 2013-11-27 08:53:45
+  updated_at: 2013-11-27 08:53:45
+
+two:
+  id: 1
+  name: MyString
+  pst: 9.99
+  gst: 9.99
+  hst: 9.99
+  created_at: 2013-11-27 08:53:45
+  updated_at: 2013-11-27 08:53:45
