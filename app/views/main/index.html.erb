@@ -1,15 +1,5 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>Facial Hair Emporium</title>
-	</head>
-	<body>
-		<%= image_tag "logo.jpg", alt: "Logo", size: "200x200"%>
-		<div id = "menu">
-		  <ul>
-		  
-		  </ul>
-		</div>
-	</body>
-</html>
+<%= image_tag "logo.jpg", alt: "Logo", size: "200x200"%>
+
+<% @products.each do |product| %>
+	<h3><%= product.name %></h3>
+<% end %>

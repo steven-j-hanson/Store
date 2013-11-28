@@ -1,12 +1,14 @@
 Store::Application.routes.draw do
+  root :to => 'store#index', :via => :get
+  
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  get "main/index"
+  #get "main/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'main#index'
+  #root 'main#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
