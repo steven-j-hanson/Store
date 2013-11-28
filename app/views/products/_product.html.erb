@@ -1,1 +1,5 @@
 <p><%=product.name%></p>
+
+<% if product.image_filename %>
+    <p><%= image_tag product.image_filename, :width => '150' %></p>
+<% end %>
