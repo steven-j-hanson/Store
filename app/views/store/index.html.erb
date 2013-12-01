@@ -1,5 +1,8 @@
 <%= image_tag "logo.jpg", alt: "Logo", size: "200x200"%>
 
-<p><%= link_to 'Search', search_path %></p>
+<%= form_tag search_results_path do %>
+  <%= text_field_tag :keywords %>
+  <%= submit_tag 'Search' %>
+<% end %>
 
 <%= render@products%>
