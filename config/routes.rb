@@ -1,5 +1,6 @@
 Store::Application.routes.draw do
   root :to => 'store#index', :via => :get
+  match 'store/:product_id' => 'store#show', :as => :store_product, :via => :get
     
   match 'search_results' => 'store#search_results',
       :as => 'search_results', :via => :post

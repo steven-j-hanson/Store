@@ -5,7 +5,7 @@ class StoreController < ApplicationController
   end
 
   def show
-      @products = Product.all(:name)
+      @product = Product.find(params[:product_id])
   end
   
   def search

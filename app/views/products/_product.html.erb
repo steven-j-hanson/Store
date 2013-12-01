@@ -1,5 +1,19 @@
-<p><%=product.name%></p>
+<h2><%= link_to product.name, store_product_path(product) %></h2>
 
 <% if product.image_filename %>
     <p><%= image_tag product.image_filename, :width => '150' %></p>
+<% end %>
+
+<p class="price">
+    <%= number_to_currency product.price %>
+</p>
+
+<div class="description">
+    <%= product.description %>
+</div>
+
+<% if product.category %>
+  <p>
+    <strong>Category:</strong> <%= product.category.name %>
+  </p>
 <% end %>
