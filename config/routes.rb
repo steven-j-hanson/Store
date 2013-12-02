@@ -4,6 +4,8 @@ Store::Application.routes.draw do
     
   match 'search_results' => 'store#search_results',
       :as => 'search_results', :via => :post
+      
+  match 'category/:id' => 'store#category_search', :as => 'category_search', :via => :get
   
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
