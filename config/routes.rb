@@ -7,6 +7,13 @@ Store::Application.routes.draw do
       
   match 'category/:id' => 'store#category_search', :as => 'category_search', :via => :get
   
+  resource :products, :only => [:index, :show] do
+    member do
+      get :add_friend
+      get :remove_friend
+    end
+  end
+  
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   #get "main/index"
