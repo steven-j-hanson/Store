@@ -18,7 +18,11 @@ class StoreController < ApplicationController
   
   def search_results
     keywords = params[:keywords]
-  
+    
+    @category = Category.where("name LIKE ?", "%#{keywords}%").first
     @products = Product.where("name LIKE ?", "%#{keywords}%")
+    if @products.empty?
+      @products = Product.where("category_id LIKE ?" , @category.id)
+    end
   end
 end
