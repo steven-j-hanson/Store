@@ -7,10 +7,12 @@ Store::Application.routes.draw do
       
   match 'category/:id' => 'store#category_search', :as => 'category_search', :via => :get
   
-  resource :products, :only => [:index, :show] do
+  match 'add_sale/:id' => 'store#add_sale', :as => 'add_sale', :via => :get
+  match 'remove_sale/:id' => 'store#remove_sale', :as => 'remove_sale', :via => :get
+  resource :store, :only => [:index, :show] do
     member do
-      get :add_friend
-      get :remove_friend
+      get :add_sale
+      get :remove_sale
     end
   end
   
