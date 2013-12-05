@@ -1,5 +1,5 @@
 <% if session[:buy].include?(product.id)%>
-  <%= link_to 'Unlike', remove_sale_path(product) %>
+  <%= link_to 'Remove From Cart', remove_sale_path(product) %>
 <% else %>
-  <%= link_to 'Like', add_sale_path(product) %>
+  <%= link_to 'Add To Cart', add_sale_path(product) %>
 <% end %>

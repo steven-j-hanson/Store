@@ -2,4 +2,9 @@
 
 <% if session[:buy].empty? %>
   <p>There is nothing in your cart</p>
+<% else %>
+  <% @buy.each do |buy| %>
+    <%= buy.name %>
+    <%= render :partial => 'buying', :locals => {:product => buy}%>
+  <% end %>
 <% end %>

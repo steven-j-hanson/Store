@@ -28,23 +28,22 @@ class StoreController < ApplicationController
   end
   
   def add_sale
-    product = Product.find(params[:id])
-    if session[:buy] = nil
-      session[:buy] = []
-    end
+    id = params[:id].to_i
     session[:buy] ||=[]
-    session[:buy] << product
+    session[:buy] << id
     redirect_to :action => :index
   end
   
   def remove_sale
-    product = Product.find(params[:id])
-    session[:buy].delete(product)
+    id = params[:id].to_i
+    session[:buy].delete(id)
     redirect_to :action => :index
   end
   
   protected
   def initialize_sale
     session[:buy] ||=[]
+    @buy = []
+    session[:buy].each {|id| @buy << Product.find(id) }
   end
 end
