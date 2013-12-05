@@ -1,10 +1,14 @@
-<h3>Cart</h3>
+<div class = "cart">
+  <h3>Cart</h3>
 
-<% if session[:buy].empty? %>
-  <p>There is nothing in your cart</p>
-<% else %>
-  <% @buy.each do |buy| %>
-    <%= buy.name %>
-    <%= render :partial => 'buying', :locals => {:product => buy}%>
+  <% if session[:buy].empty? %>
+    <p>There is nothing in your cart</p>
+  <% else %>
+    <% @buy.each do |buy| %>
+      <p>
+        <%= buy.name %>
+        <%= render :partial => 'buying', :locals => {:product => buy}%>
+      </p>
+    <% end %>
   <% end %>
-<% end %>
+</div>

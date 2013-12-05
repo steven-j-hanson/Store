@@ -1,12 +1,21 @@
-<%= image_tag "logo.jpg", alt: "Logo", size: "200x200"%>
+<header>
+  <%= image_tag "logo.jpg", alt: "Logo", size: "200x200"%>
 
-<%= form_tag search_results_path do %>
-  <%= text_field_tag :keywords %>
-  <%= submit_tag 'Search' %>
-<% end %>
-
+  <%= form_tag search_results_path do %>
+     <div class="col-lg-6">
+        <div class="input-group">
+  	  <%= text_field_tag :keywords %>
+          <span class="input-group-btn">
+            <%= submit_tag 'Search', :class => "btn btn-default" %>
+          </span>
+        </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+  <% end %>
+  <p>
+    <br /><%= render@categories%>
+  </p>
+</header>
 <%= render 'bought' %>
 
-<%= render@categories%>
 
 <%= render@products%>

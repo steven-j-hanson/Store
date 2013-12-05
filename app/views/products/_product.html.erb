@@ -1,21 +1,23 @@
-<%= render :partial => 'buying', :locals => {:product => product}%>
+<div class = "product">
+  <h2><%= link_to product.name, store_product_path(product) %></h2>
 
-<h2><%= link_to product.name, store_product_path(product) %></h2>
+  <% if product.image_filename %>
+    <p><%= image_tag product.image_filename, :width => '150', :height => '225' %></p>
+  <% end %>
 
-<% if product.image_filename %>
-    <p><%= image_tag product.image_filename, :width => '150' %></p>
-<% end %>
+  <%= render :partial => 'buying', :locals => {:product => product}%>
 
-<p class="price">
+  <p class="price">
     <%= number_to_currency product.price %>
-</p>
-
-<div class="description">
-    <%= product.description %>
-</div>
-
-<% if product.category %>
-  <p>
-    <strong>Category:</strong> <%= product.category.name %>
   </p>
-<% end %>
+
+  <div class="description">
+    <%= product.description %>
+  </div>
+
+  <% if product.category %>
+    <p>
+      <strong>Category:</strong> <%= product.category.name %>
+    </p>
+  <% end %>
+</div>
